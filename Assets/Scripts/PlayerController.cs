@@ -4,22 +4,29 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed;
     public Animator animator;
+    public float speed;
 
     private Rigidbody2D rb2d;
+    private float moveHorizontal;
 
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
+        rb2d.constraints = RigidbodyConstraints2D.None;
     }
 
     void FixedUpdate()
     {
-        float moveHorizontal = Input.GetAxis("Horizontal");
+        rb2d.constraints = RigidbodyConstraints2D.None;
+        moveHorizontal = Input.GetAxis("Horizontal");
         animator.SetFloat("Movement", moveHorizontal);
-        
         Vector2 movement = new Vector2 (moveHorizontal, 0);
         rb2d.AddForce(movement * speed);
+
+        if (!Input.anyKey)
+        {
+            rb2d.constraints = RigidbodyConstraints2D.FreezePositionX;
+        }
     }
 }
