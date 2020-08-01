@@ -7,11 +7,12 @@ public class SceneChangeController : MonoBehaviour
 {
     public string levelName;
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && Input.GetKey("z"))
         {
             SceneManager.LoadScene(levelName);
+            Debug.Log("Everything's Peachy");
         }
     }
 }
