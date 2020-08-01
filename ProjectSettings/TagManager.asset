@@ -17,7 +17,7 @@ TagManager:
   - Ceiling
   - Wall
   - Ground
-  - 
+  - Interactable
   - 
   - 
   - 
@@ -49,6 +49,9 @@ TagManager:
     locked: 0
   - name: Pickup
     uniqueID: 4185057523
+    locked: 0
+  - name: Interactable
+    uniqueID: 4027314671
     locked: 0
   - name: Player
     uniqueID: 1992750209
