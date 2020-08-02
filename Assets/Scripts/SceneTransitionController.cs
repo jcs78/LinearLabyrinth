@@ -12,7 +12,6 @@ public class SceneTransitionController : MonoBehaviour
         if (Input.GetKey("z"))
         {
             SceneManager.LoadScene(levelName);
-            Debug.Log("Everything's Peachy");
         }
     }
 }

@@ -14,13 +14,11 @@ public class HighlightChoiceController : MonoBehaviour
             {
                 transform.position = new Vector2(-0.1f, -1.5f);
                 counter += 1;
-                Debug.Log("Right -1 Activated");
             }
             else if (counter == 0)
             {
                 transform.position = new Vector2(3.85f, -1.5f);
                 counter += 1;
-                Debug.Log("Right 0 Activated");
             }
         }
         else if (Input.GetKey("left"))
@@ -29,13 +27,11 @@ public class HighlightChoiceController : MonoBehaviour
             {
                 transform.position = new Vector2(-0.1f, -1.5f);
                 counter -= 1;
-                Debug.Log("Left 1 Activated");
             }
             else if (counter == 0)
             {
                 transform.position = new Vector2(-4.0f, -1.5f);
                 counter -= 1;
-                Debug.Log("Left 0 Activated");
             }
         }
     }
