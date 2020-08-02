@@ -608,6 +608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ec74b9d52af544281c5b09477b3802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagName: 
   levelName: 
 --- !u!70 &439385367
 CapsuleCollider2D:
@@ -2563,6 +2564,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ec74b9d52af544281c5b09477b3802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagName: Player
   levelName: AreaOne
 --- !u!70 &538286271
 CapsuleCollider2D:
@@ -4467,6 +4469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ec74b9d52af544281c5b09477b3802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagName: 
   levelName: 
 --- !u!70 &1313727016
 CapsuleCollider2D:
@@ -6166,6 +6169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ec74b9d52af544281c5b09477b3802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagName: 
   levelName: 
 --- !u!70 &1486172266
 CapsuleCollider2D:
@@ -6278,6 +6282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ec74b9d52af544281c5b09477b3802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagName: 
   levelName: 
 --- !u!70 &1672921309
 CapsuleCollider2D:
@@ -6555,6 +6560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ec74b9d52af544281c5b09477b3802, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagName: 
   levelName: 
 --- !u!70 &1761471124
 CapsuleCollider2D:

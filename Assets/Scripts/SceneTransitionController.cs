@@ -7,7 +7,6 @@ public class SceneTransitionController : MonoBehaviour
 {
     public string levelName;
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKey("z"))
