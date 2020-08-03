@@ -19,7 +19,7 @@ TagManager:
   - Wall
   - Ground
   - Interactable
-  - 
+  - Decor
   - 
   - 
   - 
@@ -48,11 +48,14 @@ TagManager:
   - name: Grnd-Clng-Wll
     uniqueID: 2921436509
     locked: 0
-  - name: Pickup
-    uniqueID: 4185057523
+  - name: Decor
+    uniqueID: 1814903827
     locked: 0
   - name: Interactable
     uniqueID: 4027314671
+    locked: 0
+  - name: Pickup
+    uniqueID: 2304357999
     locked: 0
   - name: Player
     uniqueID: 1992750209
