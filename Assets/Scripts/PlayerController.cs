@@ -10,6 +10,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb2d;
     private float moveHorizontal;
 
+    public GameObject mountainClimber;
+    public GameObject camera1;
+    public GameObject camera2;
+    public GameObject inventoryHud1;
+    public GameObject inventoryHud2;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -27,6 +33,20 @@ public class PlayerController : MonoBehaviour
         if (!Input.anyKey)
         {
             rb2d.constraints = RigidbodyConstraints2D.FreezePositionX;
+        }
+
+        if (Input.GetKey("right shift"))
+        {
+            mountainClimber.SetActive(true);
+            mountainClimber.transform.position = new Vector2(transform.position.x, transform.position.y);
+            camera2.SetActive(true);
+            camera2.transform.position = new Vector3(camera1.transform.position.x, camera1.transform.position.y, -10.0f);
+            inventoryHud2.SetActive(true);
+            inventoryHud2.transform.position = new Vector2(inventoryHud1.transform.position.x, inventoryHud1.transform.position.y);
+
+            camera1.SetActive(false);
+            inventoryHud1.SetActive(false);
+            gameObject.SetActive(false);
         }
     }
 
