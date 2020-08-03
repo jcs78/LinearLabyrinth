@@ -13,8 +13,6 @@ public class MountainClimberController : MonoBehaviour
     public GameObject caveExplorer;
     public GameObject camera1;
     public GameObject camera2;
-    public GameObject inventoryHud1;
-    public GameObject inventoryHud2;
 
     private bool abilityLever = false;
 
@@ -43,20 +41,9 @@ public class MountainClimberController : MonoBehaviour
             caveExplorer.transform.position = new Vector2(transform.position.x, transform.position.y);
             camera1.SetActive(true);
             camera1.transform.position = new Vector3(camera2.transform.position.x, camera2.transform.position.y, -10.0f);
-            inventoryHud1.SetActive(true);
-            inventoryHud1.transform.position = new Vector2(inventoryHud2.transform.position.x, inventoryHud2.transform.position.y);
-
+            
             camera2.SetActive(false);
-            inventoryHud2.SetActive(false);
             gameObject.SetActive(false);
-        }
-    }
-
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.gameObject.CompareTag("SKF (Red)") || other.gameObject.CompareTag("SKF (Blue)"))
-        {
-            other.gameObject.SetActive(false);
         }
     }
  

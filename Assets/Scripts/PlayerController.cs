@@ -13,8 +13,10 @@ public class PlayerController : MonoBehaviour
     public GameObject mountainClimber;
     public GameObject camera1;
     public GameObject camera2;
-    public GameObject inventoryHud1;
-    public GameObject inventoryHud2;
+    
+    private int fragmentsCollectedRed;
+    private int fragmentsCollectedBlue;
+
 
     void Start()
     {
@@ -41,20 +43,23 @@ public class PlayerController : MonoBehaviour
             mountainClimber.transform.position = new Vector2(transform.position.x, transform.position.y);
             camera2.SetActive(true);
             camera2.transform.position = new Vector3(camera1.transform.position.x, camera1.transform.position.y, -10.0f);
-            inventoryHud2.SetActive(true);
-            inventoryHud2.transform.position = new Vector2(inventoryHud1.transform.position.x, inventoryHud1.transform.position.y);
 
             camera1.SetActive(false);
-            inventoryHud1.SetActive(false);
             gameObject.SetActive(false);
         }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("SKF (Red)") || other.gameObject.CompareTag("SKF (Blue)"))
+        if (other.gameObject.CompareTag("SKF (Red)"))
         {
             other.gameObject.SetActive(false);
+            fragmentsCollectedRed += 1;
+        }
+        else if (other.gameObject.CompareTag("SKF (Blue)"))
+        {
+            other.gameObject.SetActive(false);
+            fragmentsCollectedBlue += 1;
         }
     }
 }
