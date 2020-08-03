@@ -8,6 +8,7 @@ TagManager:
   - SKF (Blue)
   - SKF (Red)
   - Climbable Wall
+  - UI
   layers:
   - Default
   - TransparentFX
