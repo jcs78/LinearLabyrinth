@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MountainClimberController : MonoBehaviour
 {
@@ -15,6 +16,9 @@ public class MountainClimberController : MonoBehaviour
     public GameObject camera2;
 
     private bool abilityLever = false;
+
+    public GameObject ceAbilityIcon;
+    public GameObject mcAbilityIcon;
 
     void Start()
     {
@@ -41,8 +45,10 @@ public class MountainClimberController : MonoBehaviour
             caveExplorer.transform.position = new Vector2(transform.position.x, transform.position.y);
             camera1.SetActive(true);
             camera1.transform.position = new Vector3(camera2.transform.position.x, camera2.transform.position.y, -10.0f);
-            
+            ceAbilityIcon.SetActive(true);
+
             camera2.SetActive(false);
+            mcAbilityIcon.SetActive(false);
             gameObject.SetActive(false);
         }
     }
