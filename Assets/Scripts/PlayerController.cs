@@ -26,11 +26,13 @@ public class PlayerController : MonoBehaviour
     public GameObject redIcon;
     public GameObject blueIcon;
 
+    public GameObject ceAbility;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.constraints = RigidbodyConstraints2D.None;
-        fragmentsLeft.text = redLeft.ToString();
+        fragmentsLeft.text = GetRedLeft().ToString();
     }
 
     void FixedUpdate()
@@ -46,6 +48,16 @@ public class PlayerController : MonoBehaviour
             rb2d.constraints = RigidbodyConstraints2D.FreezePositionX;
         }
 
+        if (Input.GetKey("x"))
+        {
+            ceAbility.gameObject.SetActive(true);
+        }
+
+        if (Input.GetKey("escape"))
+        {
+            ceAbility.gameObject.SetActive(false);
+        }
+
         if (Input.GetKey("right shift"))
         {
             mountainClimber.SetActive(true);
@@ -58,31 +70,53 @@ public class PlayerController : MonoBehaviour
             ceAbilityIcon.SetActive(false);
             gameObject.SetActive(false);
         }
+
+        if (GetRedLeft() < 1)
+        {
+            redIcon.gameObject.SetActive(false);
+            blueIcon.gameObject.SetActive(true);
+            fragmentsLeft.text = GetBlueLeft().ToString();
+        }
+        else
+        {
+            fragmentsLeft.text = GetRedLeft().ToString();
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        int tempRedLeft = GetRedLeft();
+        int tempBlueLeft = GetBlueLeft();
+
         if (other.gameObject.CompareTag("SKF (Red)"))
         {
             other.gameObject.SetActive(false);
-            redLeft -= 1;
+            tempRedLeft -= 1;
+            SetRedLeft(tempRedLeft);
             
         }
         else if (other.gameObject.CompareTag("SKF (Blue)"))
         {
             other.gameObject.SetActive(false);
-            blueLeft -= 1;
+            tempBlueLeft -= 1;
+            SetBlueLeft(tempBlueLeft);
         }
-        
-        if (redLeft < 1)
-        {
-            redIcon.gameObject.SetActive(false);
-            blueIcon.gameObject.SetActive(true);
-            fragmentsLeft.text = blueLeft.ToString();
-        }
-        else
-        {
-            fragmentsLeft.text = redLeft.ToString();
-        }
+    }
+    
+    public int GetRedLeft()
+    {
+        return redLeft;
+    }
+    public void SetRedLeft(int redLF)
+    {
+        redLeft = redLF;
+    }
+    public int GetBlueLeft()
+    {
+        return blueLeft;
+    }
+    public void SetBlueLeft(int blueLF)
+    {
+        blueLeft = blueLF;
     }
 }
