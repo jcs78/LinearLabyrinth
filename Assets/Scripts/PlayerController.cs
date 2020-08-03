@@ -29,4 +29,12 @@ public class PlayerController : MonoBehaviour
             rb2d.constraints = RigidbodyConstraints2D.FreezePositionX;
         }
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("SKF"))
+        {
+            other.gameObject.SetActive(false);
+        }
+    }
 }
