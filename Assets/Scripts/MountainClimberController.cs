@@ -16,6 +16,8 @@ public class MountainClimberController : MonoBehaviour
     public GameObject inventoryHud1;
     public GameObject inventoryHud2;
 
+    private bool abilityLever = false;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -52,9 +54,26 @@ public class MountainClimberController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("SKF"))
+        if (other.gameObject.CompareTag("SKF (Red)") || other.gameObject.CompareTag("SKF (Blue)"))
         {
             other.gameObject.SetActive(false);
+        }
+    }
+ 
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Climbable Wall") && Input.GetKey("x"))
+        {
+            if (!abilityLever)
+            {
+                gameObject.transform.position = other.gameObject.transform.position + new Vector3(3.00f, 4.00f, 0.00f);
+                abilityLever = true;
+            }
+            else
+            {
+                gameObject.transform.position = other.gameObject.transform.position + new Vector3(-3.00f, 0.00f, 0.00f);
+                abilityLever = false;
+            }
         }
     }
 }

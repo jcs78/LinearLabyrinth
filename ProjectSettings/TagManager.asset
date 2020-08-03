@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Highlight
-  - SKF
   - SKF (Blue)
+  - SKF (Red)
+  - Climbable Wall
   layers:
   - Default
   - TransparentFX

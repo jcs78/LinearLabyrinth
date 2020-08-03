@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("SKF"))
+        if (other.gameObject.CompareTag("SKF (Red)") || other.gameObject.CompareTag("SKF (Blue)"))
         {
             other.gameObject.SetActive(false);
         }
