@@ -13,5 +13,10 @@ public class SceneTransitionController : MonoBehaviour
         {
             SceneManager.LoadScene(levelName);
         }
+        else if (Input.GetKey("escape"))
+        {
+            Debug.Log("Escape was pressed!");
+            Application.Quit();
+        }
     }
 }
